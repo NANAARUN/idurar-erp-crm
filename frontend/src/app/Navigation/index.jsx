@@ -23,13 +23,13 @@ import {
 
 const SIDEBAR_MENU = [
   { key: '/', icon: <DashboardOutlined />, title: 'Dashboard' },
-  { key: '/lead', icon: <UserAddOutlined />, title: 'Lead' },
-  { key: '/offer', icon: <FileOutlined />, title: 'Offer' },
+  // { key: '/lead', icon: <UserAddOutlined />, title: 'Lead' },
+  // { key: '/offer', icon: <FileOutlined />, title: 'Offer' },
   { key: '/customer', icon: <CustomerServiceOutlined />, title: 'Customer' },
   { key: '/invoice', icon: <FileTextOutlined />, title: 'Invoice' },
-  { key: '/quote', icon: <FileSyncOutlined />, title: 'Quote' },
-  { key: '/payment/invoice', icon: <CreditCardOutlined />, title: 'Payment Invoice' },
-  { key: '/employee', icon: <UserOutlined />, title: 'Employee' },
+  // { key: '/quote', icon: <FileSyncOutlined />, title: 'Quote' },
+  // { key: '/payment/invoice', icon: <CreditCardOutlined />, title: 'Payment Invoice' },
+  // { key: '/employee', icon: <UserOutlined />, title: 'Employee' },
   { key: '/admin', icon: <TeamOutlined />, title: 'Admin' },
 ];
 
@@ -93,15 +93,18 @@ function Sidebar({ collapsible }) {
         className="navigation"
       >
         <div className="logo" onClick={() => history.push('/')} style={{ cursor: 'pointer' }}>
-          <img src={logoIcon} alt="Logo" style={{ height: '32px' }} />
+          <img src={process.env.PUBLIC_URL + "/logo.png"}
+            alt="Logo"
+            style={{ height: 50 }}
+          />
 
-          {!showLogoApp && (
+          {/* {!showLogoApp && (
             <img
               src={logoText}
               alt="Logo"
               style={{ marginTop: '3px', marginLeft: '10px', height: '29px' }}
             />
-          )}
+          )} */}
         </div>
         <Menu mode="inline" selectedKeys={[currentPath]}>
           {SIDEBAR_MENU.map((menuItem) => (
